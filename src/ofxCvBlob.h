@@ -46,6 +46,15 @@ class ofxCvBlob {
             }
             ofEndShape(true);
             ofSetHexColor(0xff0099);
-            ofDrawRectangle(x + boundingRect.x, y + boundingRect.y, boundingRect.width, boundingRect.height);
+            // ofDrawRectangle(x + boundingRect.x, y + boundingRect.y, boundingRect.width, boundingRect.height);
+
+            ofPushMatrix();
+            ofTranslate(minRect.center.x, minRect.center.y);
+            ofRotate(minRect.angle);
+            ofDrawRectangle(-(minRect.size.width / 2.0),
+                            -(minRect.size.height / 2.0),
+                            minRect.size.width,
+                            minRect.size.height );
+            ofPopMatrix();
         }
 };
