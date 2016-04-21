@@ -116,6 +116,7 @@ int ofxCvContourFinder::findContours( ofxCvGrayscaleImage&  input,
 		blobs[i].boundingRect.y           = rect.y;
 		blobs[i].boundingRect.width       = rect.width;
 		blobs[i].boundingRect.height      = rect.height;
+		blobs[i].minRect                  = cvMinAreaRect2(cvSeqBlobs[i]);
 		blobs[i].centroid.x 			  = (myMoments->m10 / myMoments->m00);
 		blobs[i].centroid.y 			  = (myMoments->m01 / myMoments->m00);
 

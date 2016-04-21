@@ -21,6 +21,7 @@ class ofxCvBlob {
         float               area;
         float               length;
         ofRectangle         boundingRect;
+        CvBox2D             minRect;
         ofPoint             centroid;
         bool                hole;
 
