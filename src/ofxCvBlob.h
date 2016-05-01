@@ -38,6 +38,7 @@ class ofxCvBlob {
 
         //----------------------------------------
         void draw(float x = 0, float y = 0){
+            ofPushStyle();
             ofNoFill();
             ofSetHexColor(0x00FFFF);
             ofBeginShape();
@@ -49,12 +50,13 @@ class ofxCvBlob {
             // ofDrawRectangle(x + boundingRect.x, y + boundingRect.y, boundingRect.width, boundingRect.height);
 
             ofPushMatrix();
-            ofTranslate(minRect.center.x, minRect.center.y);
+            ofTranslate(x + minRect.center.x, y + minRect.center.y);
             ofRotate(minRect.angle);
             ofDrawRectangle(-(minRect.size.width / 2.0),
                             -(minRect.size.height / 2.0),
                             minRect.size.width,
                             minRect.size.height );
             ofPopMatrix();
+            ofPopStyle();
         }
 };
